@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+  <div class="container register">
+      <div class="row">
+          <div class="col-md-4 register-left">
+              <div class="text-center">
+                  <img class="small-logo" src="../../../assets/logo.png" alt="Logo">
+              </div>
+              <h2>Welcome!</h2>
+              <p>Join us today to get exclusive access to our services. Register now and become a part of our community.</p>
+              <div style="margin-top: 30px;">
+                <p>Already have an account? </p>
+                <button style="width: 120px; margin-top: 8px; border-radius: 15px;" mat-raised-button color="primary" type="submit" routerLink="/login">Login</button>
+              </div>
+           </div>
+           <div class="col-md-5 offset-md-1 register-right">
+              <mat-card class="mat-card">
+                  <h2 class="text-center">Register here !!</h2>
+                  <form>
+                      <mat-form-field class="full-width" appearance="outline">
+                          <mat-label>User Name</mat-label>
+                          <input matInput placeholder="Enter here" required formControlName="userName">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                          <mat-label>Password</mat-label>
+                          <input type="password" matInput placeholder="Enter here" required formControlName="password">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                          <mat-label>First Name</mat-label>
+                          <input type="text" matInput placeholder="Enter here" required formControlName="firstName">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                          <mat-label>Last Name</mat-label>
+                          <input type="text" matInput placeholder="Enter here" required formControlName="lastName">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                          <mat-label>Email</mat-label>
+                          <input type="email" matInput placeholder="Enter here" required formControlName="email">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                          <mat-label>Phone Number</mat-label>
+                          <input type="tel" maxlength="10" matInput placeholder="Enter here" required formControlName="phone">
+                      </mat-form-field>
+                      <div class="container text-center">
+                          <button style="width: 120px; margin-top: 15px; margin-bottom: 10px; border-radius: 15px;" mat-raised-button color="primary" type="submit">Register</button>
+                          <button style="margin-left: 10px; width: 120px; border-radius: 15px;" mat-raised-button color="accent" type="reset">Reset</button>
+                      </div>
+                  </form>
+              </mat-card>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-4 register-left">
+                <div class="text-center">
+                    <img class="small-logo" src="../../../assets/logo.png" alt="Logo">
+                </div>
+                <h2>Welcome!</h2>
+                <p>Log in to access your account.</p>
+                <div style="margin-top: 30px;">
+                  <p>Don't have an account yet? </p>
+                  <button style="width: 120px; margin-top: 8px; border-radius: 15px;" mat-raised-button color="primary" routerLink="/signup">Register</button>
+                </div>
+             </div>
+             <div class="col-md-5 offset-md-1 register-right">
+                <mat-card class="mat-card">
+                    <h2 class="text-center">Login</h2>
+                    <form>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>User Name</mat-label>
+                            <input matInput placeholder="Enter here" required formControlName="userName">
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="Enter here" required formControlName="password">
+                        </mat-form-field>
+                        
+                        <div class="container text-center">
+                            <button style="width: 120px; margin-top: 15px; margin-bottom: 10px; border-radius: 15px;" mat-raised-button color="primary" type="submit">Login</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+  </div>
+  
