@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +17,8 @@ import java.util.Set;
 public class QuizPortalServerApplication implements CommandLineRunner {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	public static void main(String[] args) {
 		SpringApplication.run(QuizPortalServerApplication.class, args);
@@ -28,7 +31,7 @@ public class QuizPortalServerApplication implements CommandLineRunner {
 //		user.setFirstName("Shubham");
 //		user.setLastName("Kumar Jha");
 //		user.setUserName("jhashubham339");
-//		user.setPassword("shubham");
+//		user.setPassword(this.bCryptPasswordEncoder.encode("shubham"));
 //		user.setEmail("jhashubham339@gmail.com");
 //		user.setPhone("9873424243");
 //		user.setProfile("shubham.png");

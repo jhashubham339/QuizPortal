@@ -14,11 +14,11 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin("*")
 public class UserController {
     @Autowired
     private UserService userService;
-    @PostMapping("/users")
+    @PostMapping("/user")
     public User createUser(@RequestBody User user) throws Exception {
 
         user.setProfile("default.png");
