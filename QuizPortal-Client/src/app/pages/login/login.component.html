@@ -15,14 +15,15 @@
              <div class="col-md-5 offset-md-1 register-right">
                 <mat-card class="mat-card">
                     <h2 class="text-center">Login</h2>
-                    <form>
+                    <!-- {{loginData |json}} -->
+                    <form (ngSubmit)="LoginForm(loginData)">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>User Name</mat-label>
-                            <input matInput placeholder="Enter here">
+                            <input matInput placeholder="Enter here" [(ngModel)]="loginData.username" required name="username">
                         </mat-form-field>
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input type="password" matInput placeholder="Enter here">
+                            <input type="password" matInput placeholder="Enter here" [(ngModel)]="loginData.password" required name="password">
                         </mat-form-field>
                         
                         <div class="container text-center">

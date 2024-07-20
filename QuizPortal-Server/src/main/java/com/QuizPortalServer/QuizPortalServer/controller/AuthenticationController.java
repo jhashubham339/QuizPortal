@@ -46,7 +46,8 @@ public class AuthenticationController {
 
     private void doAuthenticate(String username ,String password) throws Exception {
         try {
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username, password);
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+            authenticationManager.authenticate(authenticationToken); //authenticate the username and password to generate the token
         }catch (BadCredentialsException e){
             throw new Exception("Invalid Username or Password !!" + e.getMessage());
         }
