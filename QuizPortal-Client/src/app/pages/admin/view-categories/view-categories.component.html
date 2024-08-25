@@ -1,0 +1,35 @@
+<mat-card>
+    <h2>All Categories</h2>
+    <mat-card-content>
+     <div class="bootstrap-wrapper">
+         <div class="container">
+             <div class="row">
+                  <mat-list>
+                     <mat-list-item *ngFor="let option of allCategories">
+                         <mat-icon mat-list-icon>category</mat-icon>
+                         <div mat-line>{{option.title}}</div>
+                         <div mat-line>{{option.description}}</div>
+                         
+                         <button class="btn edit-btn"
+                         title="Edit Category" [routerLink]="'/admin-dashboard/view-categories/update-categories/' + option.cId">
+                         <span class="icon-padding">
+                           <i class="ri-edit-box-line ico-cursor"></i></span>
+                       </button>
+                       <button class="btn dlt-btn" 
+                       title="Delete Category" (click)="deleteCategory(option.cId)">
+                       <span class="icon-padding">
+                         <i class="ri-delete-bin-5-line ico-cursor"></i>
+                       </span>
+                     </button>
+                         <mat-divider></mat-divider>
+                     </mat-list-item>
+                 </mat-list>
+             
+                 <mat-card-actions class="text-center" style="margin-bottom: -12px; margin-top: 14px;">
+                     <button routerLink="/admin-dashboard/add-categories" mat-raised-button color="primary">Add New Category</button>
+                   </mat-card-actions>
+             </div>
+         </div>
+     </div>
+    </mat-card-content>
+ </mat-card>

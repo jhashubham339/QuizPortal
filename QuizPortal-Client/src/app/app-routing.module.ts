@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
-import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/guard/admin.guard';
 import { UserGuard } from './services/guard/user.guard';
-import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
-import { AdminHomepageComponent } from './pages/admin/admin-homepage/admin-homepage.component';
-import { AdminViewCategoriesComponent } from './pages/admin/admin-view-categories/admin-view-categories.component';
-import { AdminAddCategoriesComponent } from './pages/admin/admin-add-categories/admin-add-categories.component';
+import { ProfileComponent } from './pages/admin/profile/profile.component';
+import { HomepageComponent } from './pages/admin/homepage/homepage.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
+import { UpdateCategoriesComponent } from './pages/admin/update-categories/update-categories.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 
 const routes: Routes = [
   {
@@ -22,24 +26,40 @@ const routes: Routes = [
   },
   {
     path :'admin-dashboard',
-    component : AdminDashboardComponent,
+    component : DashboardComponent,
     canActivate : [AdminGuard],
     children :[
       {
         path : '',
-        component : AdminHomepageComponent
+        component : HomepageComponent
       },
       {
         path : 'profile',
-        component : AdminProfileComponent
+        component : ProfileComponent
       },
       {
         path : 'view-categories',
-        component : AdminViewCategoriesComponent
+        component : ViewCategoriesComponent
       },
       {
         path : 'add-categories',
-        component : AdminAddCategoriesComponent
+        component : AddCategoriesComponent
+      },
+      {
+        path :'view-categories/update-categories/:cId',
+        component : UpdateCategoriesComponent
+      },
+      {
+        path :"view-quizzes",
+        component : ViewQuizzesComponent
+      },
+      {
+        path :"add-quizzes",
+        component : AddQuizComponent
+      },
+      {
+        path :"view-quizzes/update-quiz/:qId",
+        component : UpdateQuizComponent
       }
     ]
   },

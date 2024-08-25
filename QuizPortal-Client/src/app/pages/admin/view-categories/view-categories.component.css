@@ -1,0 +1,27 @@
+.edit-btn{
+    color: #53BBB8;
+    /* margin: 0rem 1rem; */
+  }
+  
+  .edit-btn:active{
+    background-color: #53BBB8;
+    color: white;
+  }
+  .edit-btn:hover{
+    background-color: #53BBB8;
+    color: white;
+  }
+
+  .dlt-btn{
+    color: #BF4646;
+    /* margin: 0rem 1rem; */
+   }
+  .dlt-btn:hover{
+    background-color: #BF4646;
+    color: white;
+  }
+  
+   .dlt-btn:active{
+    background-color: #BF4646;
+    color: white;
+  }

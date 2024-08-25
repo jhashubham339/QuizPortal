@@ -17,26 +17,34 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthInterceptor } from './services/auth.interceptor';
-import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-import { AdminSidebarComponent } from './pages/admin/admin-sidebar/admin-sidebar.component';
-import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
-import { AdminHomepageComponent } from './pages/admin/admin-homepage/admin-homepage.component';
-import { AdminViewCategoriesComponent } from './pages/admin/admin-view-categories/admin-view-categories.component';
-import { AdminAddCategoriesComponent } from './pages/admin/admin-add-categories/admin-add-categories.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { ProfileComponent } from './pages/admin/profile/profile.component';
+import { HomepageComponent } from './pages/admin/homepage/homepage.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
+import { UpdateCategoriesComponent } from './pages/admin/update-categories/update-categories.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    AdminDashboardComponent,
+    DashboardComponent,
     UserDashboardComponent,
-    AdminSidebarComponent,
-    AdminProfileComponent,
-    AdminHomepageComponent,
-    AdminViewCategoriesComponent,
-    AdminAddCategoriesComponent
+    SidebarComponent,
+    ProfileComponent,
+    HomepageComponent,
+    ViewCategoriesComponent,
+    AddCategoriesComponent,
+    UpdateCategoriesComponent,
+    ViewQuizzesComponent,
+    AddQuizComponent,
+    UpdateQuizComponent
   ],
   imports: [
     BrowserModule,

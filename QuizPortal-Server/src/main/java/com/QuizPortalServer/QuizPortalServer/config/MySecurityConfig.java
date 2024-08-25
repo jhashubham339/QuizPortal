@@ -42,7 +42,7 @@ public class MySecurityConfig {
                 cors(cors->cors.disable()).
                 authorizeHttpRequests(request-> request.requestMatchers("/user/**")
                         .authenticated().requestMatchers("auth/**").permitAll().
-                        requestMatchers("/api/user").permitAll().
+                        requestMatchers("/api/**").permitAll().
                         anyRequest().authenticated()).
                 exceptionHandling(ex->ex.authenticationEntryPoint(jwtAuthenticationEntryPoint)).
                 sessionManagement(session ->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

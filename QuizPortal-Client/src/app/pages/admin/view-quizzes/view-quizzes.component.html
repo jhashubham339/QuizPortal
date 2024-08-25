@@ -1,0 +1,28 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <mat-card style="margin-bottom: 10px;" *ngFor="let option of quiz">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{option.title}}</mat-card-title>
+              <mat-card-subtitle>{{option.category.title}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content><p>{{option.description}}</p></mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [routerLink]="'/admin-dashboard/view-quizzes/view-questions/'+option.qId+'/'+option.title">Questions</button>
+                <button mat-stroked-button color="accent">Max Marks : {{option.maxMarks}}</button>
+                <button mat-stroked-button color="accent">Questions : {{option.numberOfQuestions}}</button>
+                <button mat-raised-button color="primary" [routerLink]="'/admin-dashboard/view-quizzes/update-quiz/'+ option.qId">Update</button>
+                <button mat-raised-button color="primary">Attempts</button>
+                <button mat-raised-button color="warn" (click)="deleteQuiz(option.qId)">Delete</button>
+            </mat-card-actions>
+          </mat-card>
+          <div class="container text-center">
+            <button mat-raised-button color="primary" routerLink="/admin-dashboard/add-quizzes">Add New Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
