@@ -6,6 +6,10 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/guard/admin.guard';
 import { UserGuard } from './services/guard/user.guard';
+import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
+import { AdminHomepageComponent } from './pages/admin/admin-homepage/admin-homepage.component';
+import { AdminViewCategoriesComponent } from './pages/admin/admin-view-categories/admin-view-categories.component';
+import { AdminAddCategoriesComponent } from './pages/admin/admin-add-categories/admin-add-categories.component';
 
 const routes: Routes = [
   {
@@ -19,7 +23,25 @@ const routes: Routes = [
   {
     path :'admin-dashboard',
     component : AdminDashboardComponent,
-    canActivate : [AdminGuard]
+    canActivate : [AdminGuard],
+    children :[
+      {
+        path : '',
+        component : AdminHomepageComponent
+      },
+      {
+        path : 'profile',
+        component : AdminProfileComponent
+      },
+      {
+        path : 'view-categories',
+        component : AdminViewCategoriesComponent
+      },
+      {
+        path : 'add-categories',
+        component : AdminAddCategoriesComponent
+      }
+    ]
   },
   {
     path : 'user-dashboard',
