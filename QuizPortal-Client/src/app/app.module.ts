@@ -15,6 +15,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
@@ -59,7 +61,9 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
     MatButtonModule,
     MatSnackBarModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [{
     provide :HTTP_INTERCEPTORS,

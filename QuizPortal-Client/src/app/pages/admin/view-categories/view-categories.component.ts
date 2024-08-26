@@ -21,7 +21,6 @@ export class ViewCategoriesComponent implements OnInit {
     this.categoriesService.getCategories().subscribe({
       next:(result)=>{
         this.allCategories =result;
-        console.log(this.allCategories)
       },
       error: (error: any) => {
        console.log(error);
@@ -46,7 +45,6 @@ export class ViewCategoriesComponent implements OnInit {
             Swal.fire('Success !!', 'Category deleted','success');
           },
           error: (error) => {
-            console.error('Error deleting category:', error);
             Swal.fire('Error !!', 'error in loading data from server','error');
           }
         })

@@ -22,12 +22,12 @@ export class UpdateCategoriesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // this is used to capture a route parameter from the URL. 
     this.cId = this.activatedRoute.snapshot.params['cId'];
    
     this.categoriesService.getCategoriesById(this.cId).subscribe({
      next:(result)=>{
        this.categoriesData = result;
-       console.log(result)
      },
      error:(error)=>{
        console.log("server error", error);
