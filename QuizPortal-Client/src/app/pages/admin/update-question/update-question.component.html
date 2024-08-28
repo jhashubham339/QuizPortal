@@ -1,0 +1,71 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Update question</h2>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-subtitle>
+                            Update the detail of the question
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <form style="margin-top: 5px;" [formGroup]="formData">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Enter the question content</mat-label>
+                                <textarea matInput placeholder="Enter here" formControlName="content" required></textarea>
+                              </mat-form-field>
+                              <!-- <div style="margin-bottom: 15px;">
+                                <mat-label>Enter the question content *</mat-label>
+                                <ckeditor [editor]="Editor"
+                                formControlName="content" required>
+                                </ckeditor>
+                              </div> -->
+
+
+
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Enter the option1</mat-label>
+                                        <input matInput placeholder="Enter here" formControlName="option1" required>
+                                      </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Enter the option2</mat-label>
+                                        <input matInput placeholder="Enter here" formControlName="option2" required>
+                                      </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Enter the option3</mat-label>
+                                        <input matInput placeholder="Enter here" formControlName="option3"required>
+                                      </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Enter the option4</mat-label>
+                                        <input matInput placeholder="Enter here" formControlName="option4"required>
+                                      </mat-form-field>
+                                </div>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label>Select answer</mat-label>
+                                    <mat-select formControlName="answer" required>
+                                        <mat-option *ngIf="formData.value.option1" [value]="formData.value.option1">{{formData.value.option1}}</mat-option>
+                                        <mat-option *ngIf="formData.value.option2" [value]="formData.value.option2">{{formData.value.option2}}</mat-option>
+                                        <mat-option *ngIf="formData.value.option3" [value]="formData.value.option3">{{formData.value.option3}}</mat-option>
+                                        <mat-option *ngIf="formData.value.option4" [value]="formData.value.option4">{{formData.value.option4}}</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                              </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+                <div class="container text-center">
+                    <button mat-flat-button color="primary" style="margin-top: 8px;" (click)="editQuestion(formData.value)">Save</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

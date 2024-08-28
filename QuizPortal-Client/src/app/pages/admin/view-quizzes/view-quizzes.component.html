@@ -14,7 +14,7 @@
                 <button mat-stroked-button color="accent">Max Marks : {{option.maxMarks}}</button>
                 <button mat-stroked-button color="accent">Questions : {{option.numberOfQuestions}}</button>
                 <button mat-raised-button color="primary" [routerLink]="'/admin-dashboard/view-quizzes/update-quiz/'+ option.qId">Update</button>
-                <button mat-raised-button color="primary">Attempts</button>
+                <!-- <button mat-raised-button color="primary">Attempts</button> -->
                 <button mat-raised-button color="warn" (click)="deleteQuiz(option.qId)">Delete</button>
             </mat-card-actions>
           </mat-card>

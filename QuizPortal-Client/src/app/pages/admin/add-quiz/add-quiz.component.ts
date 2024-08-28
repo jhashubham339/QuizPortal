@@ -56,7 +56,7 @@ submitForm(data :any){
           this.addFormdata = result;
           this.AddQuiz.reset();
           Swal.fire('Success !!', 'Quiz added successfully','success');
-          this.router.navigate(['/admin/quizzes']);
+          this.router.navigate(['/admin-dashboard/view-quizzes']);
         },
         error:(error :any)=>{
           Swal.fire('Error !!', 'error in loading data from server','error');
