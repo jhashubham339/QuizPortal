@@ -40,7 +40,7 @@ public class MySecurityConfig {
         //Configuration
         http.csrf(csrf->csrf.disable()).
                 cors(cors->cors.disable()).
-                authorizeHttpRequests(request-> request.requestMatchers("/user/**")
+                authorizeHttpRequests(request-> request.requestMatchers("/users/**")
                         .authenticated().requestMatchers("auth/**").permitAll().
                         requestMatchers("/api/**").permitAll().
                         anyRequest().authenticated()).

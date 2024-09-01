@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -40,12 +42,32 @@ public class QuestionController {
         this.questionService.deleteQuestion(questionId);
     }
 
-    //get All Questions for admin
+    //get All Questions for specific quiz for admin
     @GetMapping("/question/all/{quizId}")
     public ResponseEntity<?> getQuestionsOfQuizAdmin(@PathVariable long quizId){
         Quiz quiz = new Quiz();
         quiz.setqId(quizId);
         List<Question> questionsOfQuiz = this.questionService.getQuestionsOfQuiz(quiz);
         return ResponseEntity.ok(questionsOfQuiz);
+    }
+
+    //get all questions of any quiz
+    @GetMapping("/question/quiz/{quizId}")
+    public ResponseEntity<?> getQuestionsOfQuiz(@PathVariable long quizId){
+        //first will load the quiz
+        Quiz quiz = this.quizService.getQuizById(quizId);
+        // Get the questions associated with the quiz
+        List<Question> questions = quiz.getQuestions();
+        // Create a list to hold the questions
+        List<Question> selectedQuestions = new ArrayList<>(questions);
+        // Ensure the number of questions does not exceed the maximum allowed for the quiz
+        if(selectedQuestions.size() > quiz.getNumberOfQuestions()){
+            // Trim the list to the maximum allowed number of questions
+            selectedQuestions = selectedQuestions.subList(0, Math.toIntExact((quiz.getNumberOfQuestions())));
+        }
+        // Shuffle the order of questions
+        Collections.shuffle(selectedQuestions);
+        // Return the shuffled list of questions
+        return ResponseEntity.ok(selectedQuestions);
     }
 }

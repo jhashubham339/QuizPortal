@@ -5,6 +5,7 @@ import com.QuizPortalServer.QuizPortalServer.model.User;
 import com.QuizPortalServer.QuizPortalServer.model.UserRole;
 import com.QuizPortalServer.QuizPortalServer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.ref.Reference;
@@ -18,11 +19,13 @@ import java.util.Set;
 public class UserController {
     @Autowired
     private UserService userService;
-    @PostMapping("/user")
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @PostMapping("/users")
     public User createUser(@RequestBody User user) throws Exception {
 
         user.setProfile("default.png");
-        user.setPassword(user.getPassword());
+        user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
         Set<UserRole> userRoles= new HashSet<>();
         Role role = new Role();
         role.setRoleId(11L);

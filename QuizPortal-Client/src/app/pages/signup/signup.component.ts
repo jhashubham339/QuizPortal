@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -14,7 +15,8 @@ export class SignupComponent implements OnInit {
 
   constructor(private formBuilder : FormBuilder ,
               private userService : UserService,
-              private snackBar :MatSnackBar) { }
+              private snackBar :MatSnackBar,
+              private router : Router) { }
 
   ngOnInit(): void {
 
@@ -39,6 +41,7 @@ export class SignupComponent implements OnInit {
           this.newUser = result;
           Swal.fire('Successfully done !!', 'User is registered','success');
           this.signup.reset();
+          this.router.navigate(['/login']);
         },
         error: (error :any)=>{
           this.snackBar.open('User Name already exist !!', '', {

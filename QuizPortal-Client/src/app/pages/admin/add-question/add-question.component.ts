@@ -53,7 +53,7 @@ export class AddQuestionComponent implements OnInit {
           next:(result)=>{
             this.addQuestionData = result;
             Swal.fire('Success !!', 'Question added successfully','success');
-          //  this.router.navigate(['/admin-dashboard/view-quizzes/view-questions', this.quizId, this.title]);
+            this.router.navigate(['/admin-dashboard/view-quizzes/view-questions', this.quizId, this.title]);
           },
           error: (error) => {
             console.error('Error not adding question:', error);

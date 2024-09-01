@@ -66,7 +66,10 @@ export class UpdateQuestionComponent implements OnInit {
      next:(result)=>{
        this.updatedData = result;
        Swal.fire('Success','Question updated Successfully','success');
-       this.router.navigate(['admin-dashboard/view-quizzes/view-questions', this.quizId, this.title]);
+       this.router.navigate(['/admin-dashboard/view-quizzes/view-questions', this.updatedData.quiz.qId, this.updatedData.quiz.title]);
+      // admin-dashboard/view-quizzes/view-questions/update-question/154/sad
+      //this.router.navigate(['/admin/quizzes/view-questions', this.quizId, this.title]);
+     // view-quizzes/view-questions/:qId/:title
      },
       error:(error)=>{
        console.log("server error",error);

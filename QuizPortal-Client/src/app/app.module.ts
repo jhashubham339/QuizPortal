@@ -33,6 +33,12 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { InstructionComponent } from './pages/user/instruction/instruction.component';
+import { LoadAllQuizComponent } from './pages/user/load-all-quiz/load-all-quiz.component';
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+
 
 @NgModule({
   declarations: [
@@ -52,7 +58,12 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     UpdateQuizComponent,
     AddQuestionComponent,
     ViewQuestionsComponent,
-    UpdateQuestionComponent
+    UpdateQuestionComponent,
+    UserSidebarComponent,
+    InstructionComponent,
+    LoadAllQuizComponent,
+    StartQuizComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -69,7 +80,8 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     MatListModule,
     MatIconModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    NgxUiLoaderModule
   ],
   providers: [{
     provide :HTTP_INTERCEPTORS,

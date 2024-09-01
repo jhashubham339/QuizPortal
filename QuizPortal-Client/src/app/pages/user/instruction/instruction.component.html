@@ -1,0 +1,42 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" >
+                <mat-card style="margin-top: 5px;">
+                    <mat-card-header>
+                      <mat-card-title style="color: rgb(18, 18, 46);">
+                        Read the instructions of this page carefully.
+                      </mat-card-title>
+                      <mat-card-subtitle>
+                        One step more to go.
+                      </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content style="margin-left: 16px;" >
+                        <h2>{{quiz.title}}</h2>
+                        <p>{{quiz.description}}</p>
+                        <mat-divider></mat-divider>
+                        <h2 style="color: rgb(161, 10, 68);">Important Instructions</h2>
+                        <ul>
+                            <li>This quiz is only for practice purpose.</li>
+                            <li>You have to submit quiz with in <b>{{quiz.numberOfQuestions*2}} minutes.</b></li>
+                            <li>There are <b>{{quiz.numberOfQuestions}} questions </b>in this quiz.</li>
+                            <li>Each questions carries <b>{{quiz.maxMarks/quiz.numberOfQuestions}} marks</b>, with no negative marking for wrong answers.</li>
+                            <li>Each question is of MCQ type.</li>
+                            <li>Allocate your time wisely to ensure you have sufficient time to answer all questions.</li>
+                            <li>We recommend reviewing your answers before submitting the quiz to verify accuracy.</li>
+                            <li>Click on submit Quiz button on completion of the quiz.</li>
+                            <li>Report of the test is automatically generated in the form of PDF copy.</li>
+                            <li>Click <b>Start Quiz</b> button to start the quiz.</li>
+                            <li>We hope you enjoy participating in this quiz and find it both challenging and rewarding!</li>
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

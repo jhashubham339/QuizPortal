@@ -33,4 +33,12 @@ export class QuizService {
   getQuizzesOfCategories(categoryId :any){
     return this.http.get(`${environment.baseUrl}/quiz/category/${categoryId}`)
   }
+    //get active quizzes
+  getActiveQuizzes(){
+    return this.http.get(environment.baseUrl + '/quiz/active')
+  }
+    // get Active Quizzes Of Category
+  getActiveQuizzesOfCategory(categoryId :any){
+    return this.http.get(`${environment.baseUrl}/quiz/category/active/${categoryId}`)
+  }
 }
