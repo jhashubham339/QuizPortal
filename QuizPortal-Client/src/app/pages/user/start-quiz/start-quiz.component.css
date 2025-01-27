@@ -1,0 +1,8 @@
+.running-text {
+    color: darkblue;
+    animation: running-animation 10s linear infinite;
+}
+@keyframes running-animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(85%); }
+}

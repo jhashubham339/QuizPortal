@@ -38,7 +38,7 @@ import { InstructionComponent } from './pages/user/instruction/instruction.compo
 import { LoadAllQuizComponent } from './pages/user/load-all-quiz/load-all-quiz.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -81,7 +81,8 @@ import { NgxUiLoaderModule } from "ngx-ui-loader";
     MatIconModule,
     MatSelectModule,
     MatSlideToggleModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    MatProgressSpinnerModule
   ],
   providers: [{
     provide :HTTP_INTERCEPTORS,
